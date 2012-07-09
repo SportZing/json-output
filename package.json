@@ -2,7 +2,7 @@
   "author": "James Brumond <james@sportzing.com> (http://jbrumond.me)",
   "name": "json-output",
   "description": "A Node.js module that assists with creating standard JSON structures for HTTP output",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/SportZing/json-output.git"
