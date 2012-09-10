@@ -15,7 +15,8 @@ var json = require('json-output');
 
 json.error(new Error('foo'));
 /*
-   { message: 'Foo',
+   { error: {
+     message: 'Foo',
      stack: 'Error: Foo\n    at repl:1:10\n    at REPLServer.self.eval (repl.js:111:21)\n    at Interface.<anonymous> (repl.js:250:12)\n    at Interface.EventEmitter.emit (events.js:88:17)\n    at Interface._onLine (readline.js:183:10)\n    at Interface._line (readline.js:502:8)\n    at Interface._ttyWrite (readline.js:720:14)\n    at ReadStream.<anonymous> (readline.js:105:12)\n    at ReadStream.EventEmitter.emit (events.js:115:20)\n    at emitKey (readline.js:1042:12)',
      stackArray: 
       [ 'at repl:1:10',
@@ -33,7 +34,19 @@ json.error(new Error('foo'));
 
 json.error('This is an error message');
 /*
-   { message: 'This is an error message' }
+   { error:
+     { message: 'This is an error message' }
+   }
+*/
+
+
+json.error({ status: 404, message: 'Foo' });
+/*
+   { status: 404,
+     error: {
+       message: 'Foo'
+     }
+   }
 */
 
 
